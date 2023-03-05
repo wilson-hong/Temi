@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+</head>
+<body>
+    <p>Game</p>
+    <button id="start">start</button>
+</body>
+<script>
+    let socket = new WebSocket("ws://localhost:8888/ws");
+    document.getElementById("start").onclick = () => {
+        socket.send(JSON.stringify({"cmd": "GAME_START", "data": ""}));
+    }
+</script>
+</html>
